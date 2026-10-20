@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deteksi Pesan Spam</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>Deteksi Pesan Spam</h1><span>Naive Bayes &middot; berjalan 100% di browser &middot; data sintetis</span></header>
+<p id="err" hidden>Data gagal dimuat. Jalankan lewat server lokal: <code>python -m http.server</code> di folder <code>web/</code>.</p>
+<section class="grid2">
+  <div class="card">
+    <h2>Coba Deteksi Pesan</h2>
+    <textarea id="msg" rows="4" placeholder="Ketik atau tempel pesan di sini..."></textarea>
+    <div id="ex"></div>
+    <div id="res" hidden>
+      <div id="verdict"></div>
+      <div class="meter"><div id="mbar"></div></div>
+      <small>Kata yang memengaruhi (merah = condong spam, hijau = condong normal):</small>
+      <div id="chips"></div>
+    </div>
+  </div>
+  <div class="card"><h2>Performa Model</h2><div class="kpi" id="kpi"></div><div id="cm"></div><small id="info"></small></div>
+</section>
+<section class="grid2">
+  <div class="card"><h2>Kata Penciri Spam</h2><div id="bs"></div></div>
+  <div class="card"><h2>Kata Penciri Normal (Ham)</h2><div id="bh"></div></div>
+</section>
+<section class="card wide"><h2>Distribusi Data</h2><div id="dist"></div></section>
+<script src="app.js"></script>
+</body>
+</html>
